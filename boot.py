@@ -17,5 +17,7 @@ if button.value:
     print("usb_midi.disable()")
     usb_hid.enable()
     print("usb_hid.enable()")
+    usb_hid.enable((usb_hid.Device.MOUSE,))       # Enable just MOUSE.
+    print("usb_hid.enable((usb_hid.Device.MOUSE,))")
 
 print("End of boot.py")
