@@ -16,9 +16,15 @@ Right now I have disabled:
 I have also removed keyboard and Customer_Control from the composite HID so that only mouse is left:
 * https://learn.adafruit.com/customizing-usb-devices-in-circuitpython/hid-devices
 
-Right now this is a total failure...
-
 The switch that detect a real mouse without issue (in "Game Builder Garage") but not detect the MacroPad as a mouse.
 My PC detect that properly as a mouse.
+
+The solution to make the Switch detect a CircuitPython device as a mouse is to define a custom USB-HID.
+I first attempted to replicate a custom USB-HID for an absolute mouse within this repo: https://github.com/dglaude/CircuitPython_udraw_Absolute_Mouse
+That absolute mouse is working on Windows, but the Switch (in "Game Builder Garage) does not react properly.
+It is detect a mouse (display a mouse pointer), but at first move it is stuck for ever at the bottom left of the screen.
+
+So once I had that working, I needed to modify the custom USB-HID for one of a normal mouse.
+This is done and working in this repo: https://github.com/dglaude/Wii_uDraw_for_Nintendo_Switch
 
 PS: If you need to access those to modify the code, press the bottom right button (button 12) at boot/restart.
